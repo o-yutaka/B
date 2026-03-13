@@ -1,0 +1,62 @@
+{
+  "updated_at": "2026-03-13T03:12:23.639313+00:00",
+  "insights": [
+    {
+      "cycle": 1,
+      "pattern": "dominant_domain=energy",
+      "hypothesis": "When energy signal increases, stable market behavior follows",
+      "result": "risk=0.285"
+    },
+    {
+      "cycle": 1,
+      "pattern": "dominant_domain=energy",
+      "hypothesis": "When energy signal increases, stable market behavior follows",
+      "result": "risk=0.288"
+    },
+    {
+      "cycle": 2,
+      "pattern": "dominant_domain=energy",
+      "hypothesis": "When energy signal increases, watch market behavior follows",
+      "result": "risk=0.371"
+    },
+    {
+      "cycle": 3,
+      "pattern": "dominant_domain=energy",
+      "hypothesis": "When energy signal increases, stable market behavior follows",
+      "result": "risk=0.212"
+    },
+    {
+      "cycle": 4,
+      "pattern": "dominant_domain=energy",
+      "hypothesis": "When energy signal increases, stable market behavior follows",
+      "result": "risk=0.293"
+    }
+  ],
+  "improvements": [
+    {
+      "focus": "agent_strategy",
+      "proposal": "Increase analysis_agent weight when volatility is elevated",
+      "score": 0.65
+    },
+    {
+      "focus": "agent_strategy",
+      "proposal": "Increase analysis_agent weight when volatility is elevated",
+      "score": 0.65
+    },
+    {
+      "focus": "agent_strategy",
+      "proposal": "Increase analysis_agent weight when volatility is elevated",
+      "score": 0.68
+    },
+    {
+      "focus": "agent_strategy",
+      "proposal": "Increase analysis_agent weight when volatility is elevated",
+      "score": 0.62
+    },
+    {
+      "focus": "agent_strategy",
+      "proposal": "Increase analysis_agent weight when volatility is elevated",
+      "score": 0.65
+    }
+  ]
+}

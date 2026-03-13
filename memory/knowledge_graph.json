@@ -1,0 +1,44 @@
+{
+  "updated_at": "2026-03-13T03:12:23.625546+00:00",
+  "entities": [
+    {
+      "name": "World Bank Indicators",
+      "category": "population"
+    },
+    {
+      "name": "Open-Meteo Climate Archive",
+      "category": "climate"
+    },
+    {
+      "name": "Our World In Data Energy",
+      "category": "energy"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Open-Meteo Climate Archive",
+      "target": "Our World In Data Energy",
+      "type": "produces"
+    },
+    {
+      "source": "Open-Meteo Climate Archive",
+      "target": "Our World In Data Energy",
+      "type": "consumes"
+    },
+    {
+      "source": "Open-Meteo Climate Archive",
+      "target": "Our World In Data Energy",
+      "type": "depends_on"
+    },
+    {
+      "source": "Open-Meteo Climate Archive",
+      "target": "Our World In Data Energy",
+      "type": "affects"
+    },
+    {
+      "source": "Open-Meteo Climate Archive",
+      "target": "Our World In Data Energy",
+      "type": "causes"
+    }
+  ]
+}

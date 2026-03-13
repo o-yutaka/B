@@ -1,0 +1,56 @@
+{
+  "updated_at": "2026-03-13T03:12:23.626140+00:00",
+  "links": [
+    {
+      "source": "energy supply",
+      "target": "inflation",
+      "method": "temporal_correlation",
+      "confidence": 0.62
+    },
+    {
+      "source": "inflation",
+      "target": "interest rates",
+      "method": "event_analysis",
+      "confidence": 0.76
+    },
+    {
+      "source": "interest rates",
+      "target": "economic growth",
+      "method": "bayesian_inference",
+      "confidence": 0.61
+    },
+    {
+      "source": "energy supply",
+      "target": "inflation",
+      "method": "temporal_correlation",
+      "confidence": 0.65
+    }
+  ],
+  "evidence": [
+    {
+      "cycle": 1,
+      "observation": "energy supply signal shifted before inflation",
+      "method": "temporal_correlation"
+    },
+    {
+      "cycle": 1,
+      "observation": "energy supply signal shifted before inflation",
+      "method": "temporal_correlation"
+    },
+    {
+      "cycle": 2,
+      "observation": "inflation signal shifted before interest rates",
+      "method": "event_analysis"
+    },
+    {
+      "cycle": 3,
+      "observation": "interest rates signal shifted before economic growth",
+      "method": "bayesian_inference"
+    },
+    {
+      "cycle": 4,
+      "observation": "energy supply signal shifted before inflation",
+      "method": "temporal_correlation"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+:root { color-scheme: dark; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+body { margin: 0; background: #070b14; color: #dfe8ff; }
+header { display: flex; align-items: center; gap: 12px; padding: 12px; background: #0f1628; position: sticky; top: 0; z-index: 2; }
+#menu-toggle { font-size: 20px; background: transparent; color: white; border: 1px solid #2d3b5f; border-radius: 8px; }
+#cycle-pill { margin-left: auto; background: #213153; padding: 6px 10px; border-radius: 999px; font-size: 12px; }
+#sidebar { position: fixed; left: 0; top: 56px; bottom: 0; width: 220px; background: #0d1322; transition: transform .2s ease; }
+#sidebar.collapsed { transform: translateX(-100%); }
+nav { display: flex; flex-direction: column; padding: 10px; }
+nav a { padding: 8px; border-bottom: 1px solid #1a243d; font-size: 14px; }
+main { display: grid; gap: 12px; padding: 12px; }
+.panel { background: #0f1628; border: 1px solid #1c2845; border-radius: 12px; padding: 10px; }
+#planet-canvas { height: 280px; border-radius: 10px; overflow: hidden; }
+#chat-log { height: 120px; overflow-y: auto; background: #081022; border-radius: 8px; padding: 8px; margin-bottom: 8px; }
+.row { display: flex; gap: 8px; }
+input { flex: 1; background: #081022; color: #dfe8ff; border: 1px solid #2a3656; border-radius: 8px; padding: 8px; }
+button { background: #3857c7; color: white; border: none; border-radius: 8px; padding: 8px 12px; }
+pre { white-space: pre-wrap; font-size: 12px; max-height: 240px; overflow: auto; }
+@media (min-width: 900px) { main { grid-template-columns: 1fr 1fr; } }
