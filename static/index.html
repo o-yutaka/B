@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BLACK ORIGIN</title>
+    <link rel="stylesheet" href="/css/app.css" />
+    <script src="https://unpkg.com/three@0.161.0/build/three.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <button id="menu-toggle">☰</button>
+      <h1>BLACK ORIGIN</h1>
+      <span id="cycle-pill">Cycle 0</span>
+    </header>
+    <aside id="sidebar" class="collapsed">
+      <nav>
+        <a>Chat</a><a>Planetary Graph</a><a>Events</a><a>Sensors</a><a>Causal Model</a>
+        <a>Simulation</a><a>Predictions</a><a>Agents</a><a>Network</a><a>Research</a><a>System</a>
+      </nav>
+    </aside>
+    <main>
+      <section class="panel" id="chat-panel">
+        <h2>Chat Control Interface</h2>
+        <div id="chat-log"></div>
+        <div class="row">
+          <input id="chat-input" placeholder="Ask for predictions, causal graph, or agents" />
+          <button id="send-chat">Send</button>
+        </div>
+      </section>
+      <section class="panel">
+        <h2>Planetary Graph</h2>
+        <div id="planet-canvas"></div>
+      </section>
+      <section class="panel">
+        <h2>Module Workspace</h2>
+        <pre id="workspace"></pre>
+      </section>
+    </main>
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>

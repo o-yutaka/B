@@ -1,0 +1,50 @@
+{
+  "updated_at": "2026-03-13T03:12:23.617005+00:00",
+  "datasets": [
+    {
+      "id": "src-4-2",
+      "name": "Our World In Data Energy",
+      "source_type": "dataset",
+      "endpoint": "https://ourworldindata.org/energy",
+      "topic": "energy",
+      "discovered_at": "2026-03-13T03:12:23.614963+00:00"
+    }
+  ],
+  "apis": [
+    {
+      "id": "src-4-0",
+      "name": "World Bank Indicators",
+      "source_type": "api",
+      "endpoint": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL",
+      "topic": "population",
+      "discovered_at": "2026-03-13T03:12:23.614963+00:00"
+    },
+    {
+      "id": "src-4-1",
+      "name": "Open-Meteo Climate Archive",
+      "source_type": "api",
+      "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+      "topic": "climate",
+      "discovered_at": "2026-03-13T03:12:23.614963+00:00"
+    }
+  ],
+  "entities": [
+    {
+      "name": "World",
+      "origin": "World Bank Indicators"
+    },
+    {
+      "name": "Open-Meteo",
+      "origin": "Open-Meteo Climate Archive"
+    },
+    {
+      "name": "Our",
+      "origin": "Our World In Data Energy"
+    }
+  ],
+  "topics": [
+    "population",
+    "climate",
+    "energy"
+  ]
+}

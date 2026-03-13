@@ -1,0 +1,120 @@
+{
+  "updated_at": "2026-03-13T03:12:23.637884+00:00",
+  "domains": {
+    "economy": {
+      "signal": 0.089
+    },
+    "energy": {
+      "signal": 3.059
+    },
+    "climate": {
+      "signal": 3.059
+    },
+    "technology": {
+      "signal": 0.0
+    },
+    "population": {
+      "signal": 3.059
+    },
+    "geopolitics": {
+      "signal": 0.0
+    },
+    "resources": {
+      "signal": 0.0
+    }
+  },
+  "scenarios": [
+    {
+      "cycle": 1,
+      "scenario": "economic_shock",
+      "risk": 0.285,
+      "summary": "Scenario economic_shock evaluated with risk score 0.285"
+    },
+    {
+      "cycle": 1,
+      "scenario": "economic_shock",
+      "risk": 0.288,
+      "summary": "Scenario economic_shock evaluated with risk score 0.288"
+    },
+    {
+      "cycle": 2,
+      "scenario": "energy_transition",
+      "risk": 0.371,
+      "summary": "Scenario energy_transition evaluated with risk score 0.371"
+    },
+    {
+      "cycle": 3,
+      "scenario": "climate_disruption",
+      "risk": 0.212,
+      "summary": "Scenario climate_disruption evaluated with risk score 0.212"
+    },
+    {
+      "cycle": 4,
+      "scenario": "technology_shift",
+      "risk": 0.293,
+      "summary": "Scenario technology_shift evaluated with risk score 0.293"
+    }
+  ],
+  "predictions": [
+    {
+      "cycle": 1,
+      "trend_forecast": "stable",
+      "risk_signal": 0.285,
+      "future_scenario": "economic_shock",
+      "driver": {
+        "source": "energy supply",
+        "target": "inflation",
+        "method": "temporal_correlation",
+        "confidence": 0.62
+      }
+    },
+    {
+      "cycle": 1,
+      "trend_forecast": "stable",
+      "risk_signal": 0.288,
+      "future_scenario": "economic_shock",
+      "driver": {
+        "source": "energy supply",
+        "target": "inflation",
+        "method": "temporal_correlation",
+        "confidence": 0.62
+      }
+    },
+    {
+      "cycle": 2,
+      "trend_forecast": "watch",
+      "risk_signal": 0.371,
+      "future_scenario": "energy_transition",
+      "driver": {
+        "source": "inflation",
+        "target": "interest rates",
+        "method": "event_analysis",
+        "confidence": 0.76
+      }
+    },
+    {
+      "cycle": 3,
+      "trend_forecast": "stable",
+      "risk_signal": 0.212,
+      "future_scenario": "climate_disruption",
+      "driver": {
+        "source": "interest rates",
+        "target": "economic growth",
+        "method": "bayesian_inference",
+        "confidence": 0.61
+      }
+    },
+    {
+      "cycle": 4,
+      "trend_forecast": "stable",
+      "risk_signal": 0.293,
+      "future_scenario": "technology_shift",
+      "driver": {
+        "source": "energy supply",
+        "target": "inflation",
+        "method": "temporal_correlation",
+        "confidence": 0.65
+      }
+    }
+  ]
+}
