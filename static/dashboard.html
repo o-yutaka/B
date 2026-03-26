@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLACK ORIGIN ダッシュボード</title>
+  <style>
+    body { font-family: "Segoe UI", sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 20px; }
+    h1 { margin-top: 0; }
+    .card { background: #1e293b; border-radius: 10px; padding: 16px; margin-bottom: 12px; }
+    .meta { color: #94a3b8; font-size: 12px; }
+    .ok { color: #22c55e; }
+    .err { color: #f87171; }
+    .agents { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+  </style>
+</head>
+<body>
+  <h1>BLACK ORIGIN リアルタイム監視</h1>
+  <p class="meta">2秒ごとに自動更新されます。</p>
+  <h2>エージェント状態</h2>
+  <div id="agents" class="agents"></div>
+  <h2>性能メトリクス</h2>
+  <div id="perf" class="card"></div>
+  <h2>最新ログ</h2>
+  <div id="logs"></div>
+
+  <script>
+    async function loadLogs() {
+      const res = await fetch('/logs');
+      const data = await res.json();
+
+      const agentRoot = document.getElementById('agents');
+      agentRoot.innerHTML = '';
+      Object.values(data.agents || {}).forEach(agent => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `<div>${agent.emoji} <strong>${agent.name}</strong></div><div>model: ${agent.model}</div><div class="meta">status: ${agent.status}</div>`;
+        agentRoot.appendChild(card);
+      });
+
+      const perf = data.performance || {};
+      document.getElementById('perf').innerHTML = `CPU: ${perf.cpu_percent ?? '-'}% / Memory: ${perf.memory_percent ?? '-'}% / Throughput: ${perf.task_throughput ?? '-'} / Success: ${perf.success_rate ?? '-'}`;
+
+      const root = document.getElementById('logs');
+      root.innerHTML = '';
+      (data.logs || []).slice().reverse().forEach(log => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        const cls = log.status === 'error' ? 'err' : 'ok';
+        card.innerHTML = `
+          <div><strong class="${cls}">[${log.status}]</strong> ${log.category}</div>
+          <div>${log.message}</div>
+          <div class="meta">${log.time}</div>
+        `;
+        root.appendChild(card);
+      });
+    }
+    loadLogs();
+    setInterval(loadLogs, 2000);
+  </script>
+</body>
+</html>
