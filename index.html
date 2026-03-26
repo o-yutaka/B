@@ -99,9 +99,9 @@ async function sendMessage() {
   loading.style.display = "inline";
 
   try {
-    const res = await fetch("https://black‑proxy.mitsudayoooooon.workers.dev", {
+    const res = await fetch("/chat", {
       method: "POST",
-      headers: { "Content‑Type": "application/json" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: msg })
     });
 
