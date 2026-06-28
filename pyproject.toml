@@ -1,0 +1,9 @@
+[project]
+name = "black-origin"
+version = "1.0.0"
+description = "BLACK Enterprise Intelligence OS architecture bootstrap"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
