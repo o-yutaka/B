@@ -1,50 +1,40 @@
 # BLACK Core Specification
 
-## Identity
+BLACK Core is organized around runtime-compatible contracts:
 
-BLACK is a Decision Operating System. Every component exists only to improve decision quality.
-
-## Supreme Principle
-
-Architecture serves decisions. Decisions serve truth. Truth serves reality. Nothing serves architecture.
-
-## Existing Runtime Rule
-
-RuntimeEngine and EventBus already exist. They must not be rewritten, replaced, or bypassed. New BLACK v1.0 modules register through the existing runtime lifecycle and communicate through namespaced EventBus events.
-
-## Required Pre-Implementation Review
-
-Before implementation, review:
-
-1. BLACK Core Specification;
-2. Constitution L0-L5;
-3. the relevant component specification;
-4. the relevant Canon document;
-5. related issue, PR, commit, and design logs;
-6. compatibility with the current RuntimeEngine and EventBus.
-
-If existing design conflicts with a proposed implementation, existing design wins until an approved design change supersedes it.
-
-## Runtime Lifecycle
+- Ontology: canonical language for decisions.
+- Interfaces: abstract subsystem boundaries.
+- Packets: immutable data exchanged through EventBus.
+- Registry: capability and dependency metadata registration.
+- Runtime integration: lifecycle, dispatcher, packet router, canonical events, and adapters.
 
 ```mermaid
-flowchart TD
-    Initialize --> Register
-    Register --> SubscribeEvents[Subscribe Events]
-    SubscribeEvents --> Execute
-    Execute --> Feedback
-    Feedback --> MemoryUpdate[Memory Update]
-    MemoryUpdate --> Compression
+flowchart LR
+    RuntimeEngine --> Lifecycle[RuntimeLifecycle]
+    Lifecycle --> Router[PacketRouter]
+    Router --> Dispatcher[Dispatcher/EventBus]
+    Dispatcher --> Adapters[Runtime Adapters]
+    Adapters --> Interfaces
+    Interfaces --> Packets
+    Ontology --> Packets
+    Registry --> Interfaces
 ```
 
-## Required Module Interface
+## Phase 3 Packet Flow
 
-Every module exposes:
+```mermaid
+sequenceDiagram
+    participant Runtime as RuntimeEngine
+    participant Router as PacketRouter
+    participant Bus as Dispatcher/EventBus
+    participant Adapter as Adapter
+    participant Module as Subsystem Interface
+    Runtime->>Router: Contract packet
+    Router->>Bus: Canonical event
+    Bus->>Adapter: EventEnvelope
+    Adapter->>Module: Interface call
+    Module-->>Adapter: Contract result
+    Adapter->>Bus: Canonical result event
+```
 
-| Method | Purpose |
-| --- | --- |
-| `initialize()` | Prepare runtime-owned dependencies |
-| `register()` | Register with RuntimeEngine and EventBus |
-| `health()` | Report lifecycle health |
-| `version()` | Report contract version |
-| `shutdown()` | Release runtime-owned resources |
+Phase 3 establishes runtime connectivity only. Intelligence, search, reinforcement learning, MCTS, OpenMythos, decision-kernel logic, and world simulation remain outside this phase.
